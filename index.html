@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]><html lang="ru" class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
-<!--[if IE 7]><html lang="ru" class="lt-ie9 lt-ie8"><![endif]-->
-<!--[if IE 8]><html lang="ru" class="lt-ie9"><![endif]-->
-<!--[if gt IE 8]><!-->
+
 <html lang="ru">
 <!--<![endif]-->
 <head>
@@ -14,12 +11,12 @@
  	
 	
 	<link rel="stylesheet" href="css/main.css" />
-	<link rel="stylesheet" href="css/media.css" />
+
 	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 </head>
 <body>
 	<header class="container header">
-		<div class="logo">device</div>
+		<div class="logo"><a href="">device</a></div>
 		<div class="main-navigation">
 			<div class="searching">
 				  <form>
@@ -35,11 +32,25 @@
 			</ul>
 		</div>
 		<div class="second-navigation">
-			<div class="catalog"></div>
 			<ul class="navigation-info">
-				<li class="navigation-info-item"><a href="#"></a></li>
-				<li class="navigation-info-item"><a href="#"></a></li>
-				<li class="navigation-info-item"><a href="#"></a></li>
+				<li class="navigation-info-item catalog-info" id="catalog"><a href="#">Каталог товаров</a>
+				<li class="navigation-info-item"><a href="#">Доставка</a></li>
+				<li class="navigation-info-item"><a href="#">Гарантия</a></li>
+				<li class="navigation-info-item"><a href="#">Контакты</a></li>
+			</ul>
+		</div>
+		<div class="catalog">
+			<ul class="catalog-item">
+				<li><a href="#">Виртуальная реальность</a></li>
+				<li><a href="#">Моноподы для селфи</a></li>
+				<li><a href="#">Экшн-камеры</a></li>
+			</ul>
+			<ul class="catalog-item">
+				<li><a href="#">Фитнес-браслеты</a></li>
+				<li><a href="#">Умные часы</a></li>
+			</ul>
+			<ul class="catalog-item">
+				<li><a href="#">Квадрокоптеры</a></li>
 			</ul>
 		</div>
 	</header>
@@ -122,7 +133,21 @@
 
 <script src="js/common.js"></script>
 <script>
-
+	var catalog = document.querySelector('#catalog');
+	var menu = document.querySelector('.catalog');
+	console.log(menu);
+	catalog.addEventListener('mouseover', function(){
+		menu.classList.add('show-catalog');
+	});
+	catalog.addEventListener('mouseout', function(){
+		menu.classList.remove('show-catalog');
+	});
+	menu.addEventListener('mouseover', function(){
+		this.classList.add('show-catalog');
+	});
+	menu.addEventListener('mouseout', function(){
+		this.classList.remove('show-catalog');
+	});
 </script>
 </body>
 </html>
