@@ -1,0 +1,177 @@
+html,
+body+ {
+	margin: 0;
+	padding: 0;
+	font-family: 'Inconsolata', monospace;
+}
+
+a {
+	text-decoration: none;
+	display: block;
+	color: #000;
+}
+
+.container {
+	width: 1160px;
+	margin: 0 auto;
+}
+/*---------------------------------------------Header-----------------------------------------------------*/
+.header {
+	background-color: #ffe27f;
+	margin-top: 40px;
+	position: relative;
+	min-width: 300px;
+	border-top: 1px solid #ffe27f;
+}
+
+/*-------------------------------LOGO*/
+
+.logo {
+	text-transform: uppercase;
+	font-size: 48px;
+	position: absolute;
+	top: -25px;
+	font-weight: 700;
+	margin-left: 60px;
+}
+
+.main-navigation,
+.second-navigation {
+	width: 1040px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+/*-----------------------------------main-nav*/
+
+.main-navigation {
+	margin-top: 30px;
+
+}
+
+/*-----------------search*/
+
+.searching form {
+	position: relative;
+
+}
+.icon-search{
+	position:absolute;
+
+	
+	width:16px;
+	height: 16px;
+
+	top: 17px;
+	left: 8px;
+	background: url(../img/search.png) no-repeat;
+
+	z-index: 1;
+}
+
+.searching input {
+	margin: 0;
+	padding: 0;
+	background-color: #ffe27f;
+	border: none;
+
+
+}
+
+.searching input[type=submit] {
+	width: 85px;
+	height: 50px;
+	border: 2px solid #000;
+	display: none;
+	margin-left: -4px;
+}
+.searching input[type=submit]:hover {
+	color:#fff;
+	background: #000;
+}
+.searching input[type=submit]:active {
+	color: rgba(0, 0, 0, 0.3);
+}
+.searching input[type=search] {
+	position: relative;
+	
+	width: 360px;
+	height: 49px;
+	padding-left: 40px;
+
+
+}
+.searching input[type=search]::-webkit-input-placeholder {
+	color:rgba(0, 0, 0, 0.3);
+}
+/*searching hover/focus-----------------------------------*/
+
+.searching input[type=search]:focus::-webkit-input-placeholder {
+	color:#000;
+}
+.searching input[type=search]:focus {
+		border-bottom: 2px solid;
+} 
+.searching input[type=search]:focus +input[type=submit] {
+		
+		display:inline-block;
+		
+}
+/*end searching---------------------------------*/
+.user-menu {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	outline: green solid 1px;
+	list-style-type: none;
+	min-width: 500px;
+	justify-content: space-between;
+	align-items: center;
+
+}
+.user-menu a {
+	padding-left: 25px;
+	position: relative;
+}
+.user-menu a:after {
+	position:absolute;
+	display: block;
+	content:'';
+	width:13px;
+	height: 12px;
+	
+	top: 3px;
+	left: 4px;
+
+
+	
+}
+.user-menu-item:nth-child(2) {
+	margin-left: 200px;
+}
+.user-menu-item:nth-child(1) > a:after {
+		background: url(../img/user.png) no-repeat;
+		background-position: center;
+}
+.user-menu-item:nth-child(2) > a:after {
+		background: url(../img/compare.png)no-repeat;
+		background-position: center;
+}
+.user-menu-item:nth-child(3) > a:after {
+		background: url(../img/cart.png)no-repeat;
+		background-position: center;
+}
+/*hover/active for user-menu--------------------------------*/
+.user-menu a:hover {
+	color:rgba(0, 0, 0, 0.6);
+}
+.user-menu a:hover:after {
+	opacity: 0.6;
+}
+.user-menu a:active {
+	color:rgba(0, 0, 0, 0.3);
+}
+.user-menu a:active:after {
+	opacity: 0.3;
+}
