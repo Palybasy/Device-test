@@ -15,7 +15,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 </head>
 <body>
-	<header class="container header">
+	<div class="container header">
 		<div class="logo"><a href="">device</a></div>
 		<div class="main-navigation">
 			<div class="searching">
@@ -53,26 +53,34 @@
 				<li><a href="#">Квадрокоптеры</a></li>
 			</ul>
 		</div>
-	</header>
+	</div>
 	<div class="container slider-container">
+		<input type="radio" id="btn1" name="toggle" >
+		<input type="radio" id="btn2" name="toggle" >
+		<input type="radio" id="btn3" name="toggle">
+		<div class="slider-control">
+			<label for="btn1" id="lbl1"></label>
+			<label for="btn2"></label>
+			<label for="btn3"></label>
+		</div>
 		<div class="slider-first slider">
-			<div class="slider-img"></div>
 			<div class="slider-info">
-				<h1></h1>
-				<p></p>
-				<a href="" class="device-link info-slider"></a>
+				<h1>Делай селфи,<br>как Бен Стиллер! </h1>
+				<p>Самая длинная палка для селфи доступна в нашем магазине.
+Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
+				<a href="#" class="device-link info-link-slider">подробнее</a>
 				<div class="slider-characteristic">
 					<div class="slider-characteristic-item">
-						<h2></h2>
-						<p></p>
+						<h2>8.5м</h2>
+						<p>Длина палки</p>
 					</div>
 					<div class="slider-characteristic-item">
-						<h2></h2>
-						<p></p>
+						<h2>5кг</h2>
+						<p>Вес палки</p>
 					</div>
 					<div class="slider-characteristic-item">
-						<h2></h2>
-						<p></p>
+						<h2>Карбон</h2>
+						<p>Материал</p>
 					</div>
 				</div>
 			</div>
