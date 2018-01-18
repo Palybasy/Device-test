@@ -13,6 +13,8 @@ ul,h1,h2,p {
 h1 {
 	font-size: 47px;
 	position: relative;
+	z-index: 1;
+
 }
 h1:before {
 	content: "";
@@ -359,7 +361,8 @@ opacity: 1;
 	width:160px;
 	text-align: center;
 	z-index: 10; 
-
+	right:100px;
+	bottom: 300px;
 }
 .slider-control label{
 	display: inline-block;
@@ -376,6 +379,12 @@ opacity: 1;
 #btn3:checked	~ .slider-control label[for='btn3'] {
 		opacity: 1;
 } 
+#btn1:checked ~ .slider-first , 
+#btn2:checked	~ .slider-second , 
+#btn3:checked	~ .slider-third  {
+		display: block;
+} 
+
 .slider {
 	position: absolute;
 	left: 60px;
@@ -385,8 +394,9 @@ opacity: 1;
 	outline:1px solid red;
 
 }
-.slider-third,
-.slider-second {
+.slider-first,
+.slider-second,
+.slider-third {
 	display: none;
 }
 .slider > .slider-info {
@@ -398,15 +408,17 @@ opacity: 1;
 .slider .slider-info > h1:after{
 	background: #fff;
 }
-.slider .slider-info > h1:after {
+.slider:after {
 	content: "01";
 	display:block;
 	position: absolute;
-	top:-120px;
+	font-weight: 700;
+	top:-10px;
 	right: 20px;
 	font-size: 180px;
 	color:#fff;
 	background: transparent;
+	z-index: 0;
 
 	
 }
@@ -453,7 +465,8 @@ opacity: 1;
 	background: #ffc600;
 	color:rgba(0, 0, 0, 0.3);
 }
-/*----------------------------------*/
+/*-------end all device-link----*/
+
 .slider .slider-characteristic {
 	display: flex;
 	margin-top: 50px;
@@ -475,3 +488,17 @@ opacity: 1;
 .slider-first {
 	background: url(../img/slider-1.png) no-repeat 5% 0;
 }
+.slider-second {
+	background: url(../img/slider-2.png) no-repeat 10% 0;
+}
+.slider-third {
+	background: url(../img/slider-3.png) no-repeat  0;
+}
+
+.slider-second:after {
+	content:"02";
+}
+.slider-third:after {
+	content:"03";
+}
+/*-----------SLIDER--END------------------------------------*/
