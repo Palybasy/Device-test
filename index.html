@@ -117,19 +117,61 @@
 		</div>
 	</div>
 	<div class="container production">
-		<div class="production-item"></div>
-		<div class="production-item"></div>
-		<div class="production-item"></div>
-		<div class="production-item"></div>
-		<div class="production-item"></div>
-		<div class="production-item"></div>
+		<a href="#" class="production-item">
+			<div class="product-img"><img src="img/popular-1.png" alt=""></div>
+			<div class="production-descr">Виртуальная<br> реальность</div>
+		</a>
+		<a href="#" class="production-item">
+			<div class="product-img"><img src="img/popular-2.png" alt=""></div>
+			<div class="production-descr">Моноподы<br> для селфи</div>
+		</a>
+		<a href="#" class="production-item">
+			<div class="product-img"><img src="img/popular-3.png" alt=""></div>
+			<div class="production-descr">Экшн-камеры</div>
+		</a>
+		<a href="#" class="production-item">
+			<div class="product-img"><img src="img/popular-4.png" alt=""></div>
+			<div class="production-descr">Фитнесс<br> браслеты</div>
+		</a>
+		<a href="#" class="production-item">
+			<div class="product-img"><img src="img/popular-5.png" alt=""></div>
+			<div class="production-descr">Умные часы</div>
+		</a>
+		<a href="#" class="production-item">
+			<div class="product-img"><img src="img/popular-6.png" alt=""></div>
+			<div class="production-descr">Квадрокоптеры</div>
+		</a>
 	</div>
+	<div class="container-decor">
+		<div class="container decor-wrapper">
+			<ul class="decor-control-panel">
+				<li class="decor-active-li"><a class="device-link dec decor-active-a" id="decor1" href="#">доставка</a></li>
+				<li><a class="device-link dec" id="decor2" href="#">гарантия</a></li>
+				<li><a class="device-link dec" id="decor3" href="#">кредит</a></li>
+			</ul>	
+			<div class="decor-descr decor1 .decor-active-a">
+				<h1>Доставка</h1>
+				<p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
+			</div>
+			<div class="decor-descr decor2">
+				<h1>Гарантия</h1>
+				<p>Если из-за возгарания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый.Товар, не дом, конечно же.</p>
+			</div>
+			<div class="decor-descr decor3">
+				<h1>Кредит</h1>
+				<p>Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для нашего банка, разумеется.</p>
+			</div>
+		</div>
+	</div>
+	
 
 <script src="js/common.js"></script>
 <script>
+//	---catalog------
+	
 	var catalog = document.querySelector('#catalog');
 	var menu = document.querySelector('.catalog');
-	console.log(menu);
+
 	catalog.addEventListener('mouseover', function(){
 		menu.classList.add('show-catalog');
 	});
@@ -142,6 +184,61 @@
 	menu.addEventListener('mouseout', function(){
 		this.classList.remove('show-catalog');
 	});
+	
+//	-----decor------
+	
+	var decor = document.querySelectorAll('.dec');
+	var i ;
+	var liDecor =document.querySelectorAll(".decor-control-panel li")
+	
+
+	for (i=0; i<decor.length; i++) {
+
+		
+		decor[i].onclick = function (ttt) {
+		ttt.preventDefault();
+		
+		var atr = this.getAttribute('id');
+		var numb = atr[atr.length-1]-1;
+		var atr$ = "." + atr; 
+		var showDecor = document.querySelector(atr$);
+			
+		showDecor.classList.add("decor-active-a");
+		this.classList.add("decor-active-a");
+		liDecor[numb].classList.add("decor-active-li");
+			
+			if (numb == 0) {
+				document.querySelector('.decor2').classList.remove("decor-active-a");
+				document.querySelector('.decor3').classList.remove("decor-active-a");
+				liDecor[numb+1].classList.remove("decor-active-li");
+				liDecor[numb+2].classList.remove("decor-active-li");
+				decor[1].classList.remove('decor-active-a');
+				decor[2].classList.remove('decor-active-a');
+			}	else if (numb == 1) {
+				document.querySelector('.decor1').classList.remove("decor-active-a");
+				document.querySelector('.decor3').classList.remove("decor-active-a");
+				liDecor[numb-1].classList.remove("decor-active-li");
+				liDecor[numb+1].classList.remove("decor-active-li");
+				decor[0].classList.remove('decor-active-a');
+				decor[2].classList.remove('decor-active-a');
+			} else if( numb == 2) {
+				document.querySelector('.decor2').classList.remove("decor-active-a");
+				document.querySelector('.decor1').classList.remove("decor-active-a");
+				liDecor[numb-2].classList.remove("decor-active-li");
+				liDecor[numb-1].classList.remove("decor-active-li");
+				decor[0].classList.remove('decor-active-a');
+				decor[1].classList.remove('decor-active-a');
+			} ;
+			
+		};
+	};
+	
+
+		
+	
+
+
+
 </script>
 </body>
 </html>
