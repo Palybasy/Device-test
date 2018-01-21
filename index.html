@@ -149,7 +149,7 @@
 				<li><a class="device-link dec" id="decor2" href="#">гарантия</a></li>
 				<li><a class="device-link dec" id="decor3" href="#">кредит</a></li>
 			</ul>	
-			<div class="decor-descr decor1 .decor-active-a">
+			<div class="decor-descr decor1 decor-active-a">
 				<h1>Доставка</h1>
 				<p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
 			</div>
@@ -163,82 +163,54 @@
 			</div>
 		</div>
 	</div>
-	
-
-<script src="js/common.js"></script>
-<script>
-//	---catalog------
-	
-	var catalog = document.querySelector('#catalog');
-	var menu = document.querySelector('.catalog');
-
-	catalog.addEventListener('mouseover', function(){
-		menu.classList.add('show-catalog');
-	});
-	catalog.addEventListener('mouseout', function(){
-		menu.classList.remove('show-catalog');
-	});
-	menu.addEventListener('mouseover', function(){
-		this.classList.add('show-catalog');
-	});
-	menu.addEventListener('mouseout', function(){
-		this.classList.remove('show-catalog');
-	});
-	
-//	-----decor------
-	
-	var decor = document.querySelectorAll('.dec');
-	var i ;
-	var liDecor =document.querySelectorAll(".decor-control-panel li")
-	
-
-	for (i=0; i<decor.length; i++) {
-
-		
-		decor[i].onclick = function (ttt) {
-		ttt.preventDefault();
-		
-		var atr = this.getAttribute('id');
-		var numb = atr[atr.length-1]-1;
-		var atr$ = "." + atr; 
-		var showDecor = document.querySelector(atr$);
+	<div class="container partners">
+		<div class="partners-item"></div>
+		<div class="partners-item"></div>
+		<div class="partners-item"></div>
+		<div class="partners-item"></div>
+	</div>
+	<div class="container us-contacts">
+		<div class="us-wrapper">
+			<h1>О нас</h1>
+			<p>Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
+			<p>Мы можем доставить ваш товар в самые отдаленные точки России! DEVICE работает со многими транспортными компаниями:</p>
+			<ul class="us-transport">
+				<li class="us-transport-item">Деловые Линии</li>
+				<li class="us-transport-item">Автотрейдинг</li>
+				<li class="us-transport-item">ЖелДорЭкспедиция</li>
+			</ul>
+			<a href="#" class="device-link us-contacts-a">подробнее о нас</a>
+		</div>
+		<div class="contacts-wrapper">
+			<h1>Контакты</h1>
+			<p>Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.</p>
+			<a class="map-img"></a>
+			<a href="#" class="device-link us-contacts-a">напишите нам</a>
+		</div>
+	</div>
+	<div class="modal modal-write">
+		<form action="" class="modal-form" method="post">
+		<div class="modal-wrapper">
+				<div class="modal-write-item">
+				<label for="user-menu">Ваше имя:</label>
+				<input type="text" class="user-name" id="user-menu" name="name" placeholder="Представьтесь, пожалуйста">
+			</div>
+				<div class="modal-write-item">
+				<label for="user-email">Ваше Email:</label>
+				<input type="email" class="user-email" id="user-email" name="email" placeholder="Для отправки ответа">
+			</div>
+			<div class="modal-write-item">
+				<label for="user-text">Текст письма:</label>
+				<input type="text" class="user-text" id="user-text" name="text" placeholder="В свободной форме">
+			</div>
+		</div>
+		<button type="submit" value="отправить"></button>
 			
-		showDecor.classList.add("decor-active-a");
-		this.classList.add("decor-active-a");
-		liDecor[numb].classList.add("decor-active-li");
 			
-			if (numb == 0) {
-				document.querySelector('.decor2').classList.remove("decor-active-a");
-				document.querySelector('.decor3').classList.remove("decor-active-a");
-				liDecor[numb+1].classList.remove("decor-active-li");
-				liDecor[numb+2].classList.remove("decor-active-li");
-				decor[1].classList.remove('decor-active-a');
-				decor[2].classList.remove('decor-active-a');
-			}	else if (numb == 1) {
-				document.querySelector('.decor1').classList.remove("decor-active-a");
-				document.querySelector('.decor3').classList.remove("decor-active-a");
-				liDecor[numb-1].classList.remove("decor-active-li");
-				liDecor[numb+1].classList.remove("decor-active-li");
-				decor[0].classList.remove('decor-active-a');
-				decor[2].classList.remove('decor-active-a');
-			} else if( numb == 2) {
-				document.querySelector('.decor2').classList.remove("decor-active-a");
-				document.querySelector('.decor1').classList.remove("decor-active-a");
-				liDecor[numb-2].classList.remove("decor-active-li");
-				liDecor[numb-1].classList.remove("decor-active-li");
-				decor[0].classList.remove('decor-active-a');
-				decor[1].classList.remove('decor-active-a');
-			} ;
-			
-		};
-	};
-	
+		</form>
+		<button class="modal-close" type="button"></button>	
+	</div>
 
-		
-	
-
-
-
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>

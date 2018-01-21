@@ -577,6 +577,7 @@ opacity: 1;
 }
 .decor-control-panel li {
 	margin-top: 40px;
+	transition: all 0.9s; 
 	
 
 }
@@ -587,6 +588,7 @@ opacity: 1;
 .decor-control-panel .device-link {
 	z-index: 0;
 	width: 160px;
+	transition: all 0.3s; 
 	
 }
 
@@ -624,6 +626,7 @@ opacity: 1;
 
 .decor1, .decor2, .decor3 {
 	opacity: 0;
+	transition: all 0.5s; 
 }
 
 .decor1 {
@@ -645,12 +648,108 @@ opacity: 1;
 	color:#fff;
 }
 .decor-active-a:before {
-	opacity: 0;
+display: none;
+	
 }
 /*-----------------------------------*/
 
+/*------------END container-decor-------------------------------------*/
 
 
+/*------------start container-partners-------------------------------------*/
 
+.partners {
+	min-height: 335px;
+	display: flex;
+	justify-content: space-between;
+	
+}
+.partners .partners-item {
+	min-width: 280px;
 
+	filter: grayscale(100%);
+	opacity: 0.2;
+	transition: all 0.5s;
+}
+.partners .partners-item:first-child {
+	background: url(../img/logo-1.png) no-repeat 0;
+}
+.partners .partners-item:nth-child(2) {
+	background: url(../img/logo-2.png) no-repeat 0;
+}
+.partners .partners-item:nth-child(3) {
+	background: url(../img/logo-3.png) no-repeat 0;
+}
+.partners .partners-item:last-child {
+	background: url(../img/logo-4.png) no-repeat 0;
+}
+.partners .partners-item:hover {
+	filter: grayscale(0%);
+	opacity: 1;
+}
+/*------------End partners-------------------------------------*/
 
+/*----------------------start us-contacts------------------------*/
+
+.us-contacts {
+	min-height: 600px;
+	display: flex;
+	outline: 1px solid red;
+}
+
+.us-wrapper {
+	min-width: 600px;	
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.us-wrapper p {
+	max-width: 460px;
+	font-size: 15px;
+	color:#444444;
+	line-height: 30px;
+}
+.us-contacts-a {
+	margin-bottom: 90px;
+		width: 260px;
+}
+.us-contacts-a:before {
+	width: 260px;
+	
+}
+.us-wrapper .us-transport {
+	margin-left: 35px;
+}
+.us-wrapper .us-transport .us-transport-item {
+	position: relative;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 40px;
+}
+.us-wrapper .us-transport .us-transport-item:before{
+	content: "";
+	display: block;
+	position: absolute;
+	width:2px;
+	height:2px;
+	border: 3px solid #000;
+	border-radius: 50%;
+	top: 15px;
+	left: -35px;
+	opacity: 0.3;
+}
+
+.contacts-wrapper {
+	display: flex;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	
+}
+.map-img {
+	width: 560px;
+	height:222px;
+	background: url(../img/map.png);
+	cursor: pointer;
+}
