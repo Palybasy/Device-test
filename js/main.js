@@ -21,7 +21,7 @@
 	var decor = document.querySelectorAll('.dec');
 	var decorArr = Array.from(decor);
 	var i ;
-	var liDecor =document.querySelectorAll(".decor-control-panel li")
+	var liDecor = document.querySelectorAll(".decor-control-panel li");
 	
 
 	for (i=0; i<decor.length; i++) {
@@ -65,6 +65,75 @@
 		});
 	};
 	
+//-----------modal------------------------------------------------------------------
+var write = document.querySelector('.modal-write');
+var writeClose = document.querySelector('#write-close');
+var writeOpen = document.querySelector('#write-us');
+
+var map = document.querySelector('.modal-map'); 
+var mapClose = document.querySelector('#map-close');
+var mapOpen = document.querySelector('.map-img');
+
+var form = write.querySelector("form");
+var name = write.querySelector("[name=имя]");
+var email = write.querySelector("[name=email]");
+var text = write.querySelector("[name=text]");
+var storage = localStorage.getItem("name");
+
+console.log(name);
+writeOpen.addEventListener('click', function(e) {
+	e.preventDefault();
+	write.classList.add('modal-show');
+	if (storage) {
+		name.value = storage;
+	}
+
+});
+
+writeClose.addEventListener('click', function(e) {
+	e.preventDefault();
+	write.classList.remove('modal-show');
+
+});
+
+mapOpen.addEventListener('click', function(e) {
+	e.preventDefault();
+	map.classList.add('modal-show');
+
+});
+
+mapClose.addEventListener('click', function(e) {
+	e.preventDefault();
+	map.classList.remove('modal-show');
+
+});
+
+form.addEventListener("submit", function(e){
+	
+	if (!name.value ) {
+		e.preventDefault();
+		console.log("123");
+	} else {
+		localStorage.setItem('name', name.value);
+	}
+	
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		
 	
