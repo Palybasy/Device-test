@@ -812,6 +812,7 @@ display: none;
 .modal-write .modal-write-item input:focus {
 	border:2px solid rgba(68, 68, 68, 0.49);
 	outline: none;
+	background: #fff;
 }
 .modal-write-link {
 	margin-top: 200px;
@@ -1000,4 +1001,8 @@ margin-left: 0;
 
 .modal-show {
 	display: block;
+}
+
+.warning-input {
+	background: rgba(255, 116, 116, 0.9);
 }
